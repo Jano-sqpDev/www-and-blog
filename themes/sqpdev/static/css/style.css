@@ -231,6 +231,16 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
+.month-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--accent-cyan);
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
 .post-list {
   list-style: none;
 }

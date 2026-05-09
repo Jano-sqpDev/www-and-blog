@@ -1,16 +1,19 @@
 {{ define "main" }}
 <section class="blog-list">
   <h1>{{ .Title }}</h1>
+  {{ range .Pages.GroupByDate "January 2006" }}
+  <h2 class="month-heading">{{ .Key }}</h2>
   <ul class="post-list">
     {{ range .Pages }}
     <li>
       <a href="{{ .Permalink }}">
         <span class="post-title">{{ .Title }}</span>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan" }}</time>
       </a>
       {{ if .Description }}<p class="post-desc">{{ .Description }}</p>{{ end }}
     </li>
     {{ end }}
   </ul>
+  {{ end }}
 </section>
 {{ end }}
