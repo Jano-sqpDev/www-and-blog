@@ -7,6 +7,23 @@ theme = "sqpdev"
   description = "Infrastructure as Code"
   author = "SQP Dev"
   logo = "/images/logo.png"
+  about = "We design, build, and manage cloud infrastructure using code. Repeatable, version-controlled, and built to scale."
+  contact_email = ""
+
+  [[params.services]]
+    icon = "⚙️"
+    title = "IaaC Solutions"
+    desc = "Terraform, Ansible, and Pulumi — infrastructure defined, versioned, and automated."
+
+  [[params.services]]
+    icon = "☁️"
+    title = "Cloud Architecture"
+    desc = "AWS, Azure, and GCP environments designed for reliability and cost efficiency."
+
+  [[params.services]]
+    icon = "🔄"
+    title = "CI/CD Pipelines"
+    desc = "Automated build, test, and deployment workflows that ship with confidence."
 
 [menu]
   [[menu.main]]

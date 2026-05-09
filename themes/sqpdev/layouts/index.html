@@ -7,6 +7,24 @@
   <p class="tagline">{{ .Site.Params.description }}</p>
 </section>
 
+<section class="about">
+  <p>{{ .Site.Params.about }}</p>
+  {{ if .Site.Params.services }}
+  <div class="services">
+    {{ range .Site.Params.services }}
+    <div class="service">
+      <span class="service-icon">{{ .icon }}</span>
+      <h3>{{ .title }}</h3>
+      <p>{{ .desc }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ if .Site.Params.contact_email }}
+  <p class="contact">Get in touch — <a href="mailto:{{ .Site.Params.contact_email }}">{{ .Site.Params.contact_email }}</a></p>
+  {{ end }}
+</section>
+
 {{ $posts := where .Site.RegularPages "Section" "posts" }}
 {{ if $posts }}
 <section class="recent-posts">
