@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="hero">
+  {{ if .Site.Params.logo }}
+    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="hero-logo">
+  {{ end }}
+  <h1>SQP<span class="sep">|</span><span class="dev">DEV</span></h1>
+  <p class="tagline">{{ .Site.Params.description }}</p>
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ if $posts }}
+<section class="recent-posts">
+  <h2>Latest Posts</h2>
+  <ul class="post-list">
+    {{ range first 5 $posts }}
+    <li>
+      <a href="{{ .Permalink }}">
+        <span class="post-title">{{ .Title }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ if gt (len $posts) 5 }}
+    <a href="/posts/" class="view-all">View all posts →</a>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

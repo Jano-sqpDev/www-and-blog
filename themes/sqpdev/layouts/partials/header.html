@@ -1,0 +1,15 @@
+<header>
+  <nav>
+    <a href="/" class="logo-link">
+      {{ if .Site.Params.logo }}
+        <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="logo">
+      {{ end }}
+      <span class="site-name">SQP<span class="sep">|</span><span class="dev">DEV</span></span>
+    </a>
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>
