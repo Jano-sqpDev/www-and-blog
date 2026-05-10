@@ -129,13 +129,16 @@ nav {
 }
 
 .pagefind-ui .pagefind-ui__search-input {
-  background: var(--bg-card);
-  color: var(--text);
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+  color-scheme: dark;
+  -webkit-appearance: none;
   border: 1px solid var(--border);
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  padding: 0.4rem 0.75rem;
+  padding: 0.25rem 0.75rem;
+  height: 28px;
   width: 160px;
   transition: width 0.3s, border-color 0.2s;
 }
