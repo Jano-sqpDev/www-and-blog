@@ -110,6 +110,112 @@ nav {
   color: var(--text);
 }
 
+/* ── Search ── */
+
+.search-container {
+  position: relative;
+}
+
+.pagefind-ui {
+  --pagefind-ui-scale: 0.75;
+  --pagefind-ui-primary: var(--accent-cyan);
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-background: var(--bg-card);
+  --pagefind-ui-border: var(--border);
+  --pagefind-ui-tag: var(--accent-blue);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 6px;
+  --pagefind-ui-font: var(--font-body);
+}
+
+.pagefind-ui .pagefind-ui__search-input {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.75rem;
+  width: 160px;
+  transition: width 0.3s, border-color 0.2s;
+}
+
+.pagefind-ui .pagefind-ui__search-input:focus {
+  width: 240px;
+  border-color: var(--accent-cyan);
+  outline: none;
+}
+
+.pagefind-ui .pagefind-ui__search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.pagefind-ui .pagefind-ui__search-clear {
+  color: var(--text-muted);
+}
+
+.pagefind-ui .pagefind-ui__results-area {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.pagefind-ui .pagefind-ui__result {
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+
+.pagefind-ui .pagefind-ui__result:last-child {
+  border-bottom: none;
+}
+
+.pagefind-ui .pagefind-ui__result-link {
+  color: var(--accent-cyan);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pagefind-ui .pagefind-ui__result-link:hover {
+  color: var(--accent-blue);
+}
+
+.pagefind-ui .pagefind-ui__result-excerpt {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.pagefind-ui mark {
+  background: rgba(43, 127, 255, 0.25);
+  color: var(--accent-cyan);
+  border-radius: 2px;
+  padding: 0 0.1em;
+}
+
+@media (max-width: 600px) {
+  .pagefind-ui .pagefind-ui__search-input {
+    width: 120px;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    width: 180px;
+  }
+
+  .pagefind-ui .pagefind-ui__results-area {
+    width: 280px;
+  }
+}
+
 /* ── Main ── */
 
 main {

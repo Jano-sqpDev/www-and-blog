@@ -10,6 +10,19 @@
       {{ range .Site.Menus.main }}
         <li><a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
       {{ end }}
+      <li class="search-container">
+        <div id="search"></div>
+      </li>
     </ul>
   </nav>
 </header>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: false,
+      showImages: false
+    });
+  });
+</script>
