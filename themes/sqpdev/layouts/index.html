@@ -14,6 +14,7 @@
       "Learning cloud, one broken deploy at a time.",
       "Long road ahead. Loving every terminal session.",
       "Building skills, breaking things, having a blast.",
+      "The DevOps journey is long — and I'm here for all of it.",
       "Embracing the chaos of learning infrastructure.",
       "From zero to DevOps — one config file at a time.",
       "Breaking prod in dev so I don't break it in prod.",
@@ -30,6 +31,7 @@
       "My uptime is my study time.",
       "Currently debugging my career path.",
       "Infrastructure dreams, terminal reality.",
+      "Learning DevOps so the robots don't replace me first.",
       "Ctrl+C, Ctrl+V, Ctrl+my-future.",
       "Cloud native in training. Couch native by default.",
       "Every 'terraform destroy' teaches me something new.",
@@ -53,21 +55,52 @@
 
 <section class="about">
   <p>{{ .Site.Params.about }}</p>
-  {{ if .Site.Params.services }}
-  <div class="services">
-    {{ range .Site.Params.services }}
-    <div class="service">
-      <span class="service-icon">{{ .icon }}</span>
-      <h3>{{ .title }}</h3>
-      <p>{{ .desc }}</p>
-    </div>
-    {{ end }}
-  </div>
-  {{ end }}
+  <div class="services" id="services"></div>
   {{ if .Site.Params.contact_email }}
   <p class="contact">Get in touch — <a href="mailto:{{ .Site.Params.contact_email }}">{{ .Site.Params.contact_email }}</a></p>
   {{ end }}
 </section>
+
+<script>
+  (function() {
+    var cards = [
+      { icon: "⚙️", title: "Infrastructure as Code", desc: "Terraform, Pulumi, Ansible — because clicking through consoles 47 times is not a deployment strategy." },
+      { icon: "☁️", title: "Cloud Architecture", desc: "AWS, Azure, GCP — learning which buttons not to press and which services not to leave running overnight." },
+      { icon: "🔄", title: "CI/CD Pipelines", desc: "Automating the path from 'git push' to 'oh no' to 'oh wait, it actually worked'." },
+      { icon: "🐳", title: "Containers & Docker", desc: "Putting apps in boxes so they behave the same everywhere. Like luggage, but for code." },
+      { icon: "☸️", title: "Kubernetes", desc: "Container orchestration for when Docker Compose looks at your architecture and says 'I can't do this alone'." },
+      { icon: "🔐", title: "Security & IAM", desc: "Least privilege, secret rotation, and the constant fear of accidentally committing an API key." },
+      { icon: "📊", title: "Monitoring & Observability", desc: "Dashboards, alerts, and logs — so you find out something's broken before your users do." },
+      { icon: "🐧", title: "Linux & Shell", desc: "Living in the terminal, one piped command at a time. Yes, I use vim. No, I can't always exit it." },
+      { icon: "🌐", title: "Networking", desc: "Subnets, DNS, firewalls, and the dark art of figuring out why packets aren't arriving." },
+      { icon: "📦", title: "Configuration Management", desc: "Making sure 50 servers are configured identically — because snowflake servers melt under pressure." },
+      { icon: "🗄️", title: "Databases & Storage", desc: "RDS, S3, DynamoDB — storing data responsibly and backing it up before learning that lesson the hard way." },
+      { icon: "🧪", title: "Testing Infrastructure", desc: "Because 'terraform apply' in production without a plan is not a test — it's a gamble." },
+      { icon: "📝", title: "Documentation", desc: "Writing things down so future me doesn't mass to spend three hours reverse-engineering past me's decisions." },
+      { icon: "🔀", title: "Git & Version Control", desc: "Branching, merging, rebasing, and occasionally staring at a conflict wondering what went wrong with my life." },
+      { icon: "💰", title: "Cost Optimisation", desc: "Turning off things I forgot were running. Also known as 'checking the AWS bill and panicking'." }
+    ];
+
+    // Shuffle and pick 3
+    for (var i = cards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = cards[i];
+      cards[i] = cards[j];
+      cards[j] = temp;
+    }
+
+    var container = document.getElementById('services');
+    for (var k = 0; k < 3; k++) {
+      var card = cards[k];
+      var div = document.createElement('div');
+      div.className = 'service';
+      div.innerHTML = '<span class="service-icon">' + card.icon + '</span>' +
+                      '<h3>' + card.title + '</h3>' +
+                      '<p>' + card.desc + '</p>';
+      container.appendChild(div);
+    }
+  })();
+</script>
 
 {{ $posts := where .Site.RegularPages "Section" "posts" }}
 {{ if $posts }}
