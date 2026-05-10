@@ -117,69 +117,49 @@ nav {
 }
 
 .pagefind-ui {
-  --pagefind-ui-scale: 0.55;
-  --pagefind-ui-primary: var(--accent-cyan);
-  --pagefind-ui-text: var(--text);
+  --pagefind-ui-scale: 0.44;
+  --pagefind-ui-primary: #44d9e8;
+  --pagefind-ui-text: #e0e0e0;
   --pagefind-ui-background: #111114;
-  --pagefind-ui-border: var(--border);
-  --pagefind-ui-tag: var(--accent-blue);
+  --pagefind-ui-border: #1e1e24;
+  --pagefind-ui-tag: #2b7fff;
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: 6px;
-  --pagefind-ui-font: var(--font-body);
+  --pagefind-ui-font: 'Outfit', sans-serif;
 }
 
-.pagefind-ui .pagefind-ui__form {
-  position: relative;
-}
-
-.pagefind-ui .pagefind-ui__search-input,
-.pagefind-ui input[type="text"],
-.pagefind-ui input {
-  background: #111114 !important;
+#search .pagefind-ui__search-input,
+.search-container .pagefind-ui__search-input {
   background-color: #111114 !important;
   color: #e0e0e0 !important;
   color-scheme: dark !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  font-family: var(--font-mono) !important;
-  font-size: 0.8rem !important;
-  padding: 0.2rem 0.6rem !important;
-  height: 28px !important;
-  max-height: 28px !important;
-  min-height: 0 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 400 !important;
   width: 160px;
   transition: width 0.3s, border-color 0.2s;
-  box-shadow: none !important;
 }
 
-.pagefind-ui .pagefind-ui__search-input:focus,
-.pagefind-ui input[type="text"]:focus,
-.pagefind-ui input:focus {
+#search .pagefind-ui__search-input:focus,
+.search-container .pagefind-ui__search-input:focus {
   width: 240px;
-  border-color: var(--accent-cyan) !important;
+  border-color: #44d9e8 !important;
   outline: none !important;
-  background: #111114 !important;
+  background-color: #111114 !important;
 }
 
-/* Force Chrome autofill to stay dark */
-.pagefind-ui input:-webkit-autofill,
-.pagefind-ui input:-webkit-autofill:hover,
-.pagefind-ui input:-webkit-autofill:focus {
+#search input:-webkit-autofill,
+#search input:-webkit-autofill:hover,
+#search input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #111114 inset !important;
   -webkit-text-fill-color: #e0e0e0 !important;
-  transition: background-color 5000s ease-in-out 0s;
 }
 
-.pagefind-ui .pagefind-ui__search-input::placeholder {
-  color: var(--text-muted);
+#search .pagefind-ui__search-input::placeholder {
+  color: #888;
 }
 
-.pagefind-ui .pagefind-ui__search-clear {
-  color: var(--text-muted);
-  height: 28px !important;
+#search .pagefind-ui__search-clear {
+  color: #888;
 }
 
 .pagefind-ui .pagefind-ui__results-area {

@@ -8,6 +8,23 @@
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="stylesheet" href="/css/style.css">
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <style>
+    /* Override Pagefind with maximum specificity */
+    .pagefind-ui .pagefind-ui__search-input.svelte-e9gkc3,
+    .pagefind-ui .pagefind-ui__search-input[type="text"],
+    #search .pagefind-ui__search-input {
+      background-color: #111114 !important;
+      color: #e0e0e0 !important;
+      height: 28px !important;
+      padding: 0 0.6rem !important;
+      font-size: 0.75rem !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      border: 1px solid #1e1e24 !important;
+      border-radius: 6px !important;
+      font-weight: 400 !important;
+      color-scheme: dark !important;
+    }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
