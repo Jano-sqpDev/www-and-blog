@@ -1,4 +1,4 @@
-baseURL = "https://sqpdev.com/"
+soibaseURL = "https://sqpdev.com/"
 languageCode = "en-gb"
 title = "SQP Dev"
 theme = "sqpdev"
@@ -7,7 +7,7 @@ theme = "sqpdev"
   description = "Infrastructure as Code"
   author = "SQP Dev"
   logo = "/images/logo.png"
-  about = "We design, build, and manage cloud infrastructure using code. Repeatable, version-controlled, and built to scale."
+  about = "From rendering pipelines to deployment pipelines — turns out I just really like pipelines. After years in VFX and IT, I'm teaching myself DevOps and documenting every triumph, stumble, and suspicious YAML error along the way."
   contact_email = ""
 
   [[params.services]]
