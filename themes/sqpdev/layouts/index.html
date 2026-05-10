@@ -4,8 +4,54 @@
     <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="hero-logo">
   {{ end }}
   <h1>SQP<span class="sep">|</span><span class="dev">DEV</span></h1>
-  <p class="tagline">{{ .Site.Params.description }}</p>
+  <p class="tagline" id="tagline">{{ .Site.Params.description }}</p>
 </section>
+
+<script>
+  (function() {
+    var taglines = [
+      "Infrastructure as Code",
+      "Learning cloud, one broken deploy at a time.",
+      "Long road ahead. Loving every terminal session.",
+      "Building skills, breaking things, having a blast.",
+      "The DevOps journey is long — and I'm here for all of it.",
+      "Embracing the chaos of learning infrastructure.",
+      "From zero to DevOps — one config file at a time.",
+      "Breaking prod in dev so I don't break it in prod.",
+      "Terraform plans and unplanned lessons.",
+      "Infinite things to learn. Wouldn't have it any other way.",
+      "Where every error message is a teacher.",
+      "Turning 'it works on my machine' into 'it works everywhere'.",
+      "Cloud learner. Terminal dweller. Occasional yaml debugger.",
+      "The path is long, the stack is deep, and the coffee is strong.",
+      "Learning infrastructure the hard way — and enjoying every minute.",
+      "Still deploying. Still learning. Still smiling.",
+      "Deploying confidence, one commit at a time.",
+      "SSH-ing into the unknown.",
+      "My uptime is my study time.",
+      "Currently debugging my career path.",
+      "Infrastructure dreams, terminal reality.",
+      "Learning DevOps so the robots don't replace me first.",
+      "Ctrl+C, Ctrl+V, Ctrl+my-future.",
+      "Cloud native in training. Couch native by default.",
+      "Every 'terraform destroy' teaches me something new.",
+      "Pipeline? More like a lifeline.",
+      "Automating everything except my motivation — that runs natively.",
+      "Somewhere between 'hello world' and 'hello production'.",
+      "One YAML indent away from greatness.",
+      "Building the plane while learning to fly it.",
+      "Less clicking, more scripting, maximum learning.",
+      "Warning: may contain traces of unfinished side projects.",
+      "Containers, clouds, and countless Stack Overflow tabs.",
+      "If it's not in Git, it didn't happen.",
+      "Learning by doing. Fixing by Googling. Thriving by caffeine.",
+      "The only thing I'm not automating is the fun."
+    ];
+
+    var index = Math.floor(Math.random() * taglines.length);
+    document.getElementById('tagline').textContent = taglines[index];
+  })();
+</script>
 
 <section class="about">
   <p>{{ .Site.Params.about }}</p>
